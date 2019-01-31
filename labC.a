@@ -1,0 +1,30 @@
+
+// initializing weights
+addi x5, x0, 5
+addi x6, x0, 5
+addi x7, x0, 10
+addi x8, x0, 20
+addi x9, x0, 20
+addi x10, x0, 40
+
+
+// check if assignment 1 isnt done
+bne x5, x0, Exit
+add x6, x6, x6
+
+// check if assignment 2 isnt done
+Exit:	
+bne x6, x0, Exit2
+add x5, x5, x5
+// check if midterm is completed
+Exit2:
+bne x8, x0, Exit3
+add x10, x9, x10
+beq x0, x0, Exit3
+// add all values
+Exit3:
+add x11, x5,x6
+add x11,x11,x7
+add x11,x11,x8
+add x11,x11,x9
+add x11,x11,x10
